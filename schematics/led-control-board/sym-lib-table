@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "rasppi-led-rescue")(type "Legacy")(uri "${KIPRJMOD}/led-control-board-rescue.lib")(options "")(descr ""))
+)
