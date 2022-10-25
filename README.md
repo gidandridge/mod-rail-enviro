@@ -27,15 +27,23 @@ The python program requires the pigpio library to be installed on the host pi. T
 ```
 sudo apt-get install pigpio
 ```
+Once installed the pigpio daemon needs to be running before the python program is started. The pigpio daemon can be started with:
+```
+sudo pigpiod
+```
 The python program also needs the following python modules:
-- pigpio
+- pigpio (may need to be installed with pip, see below)
+- pygame (may need to be installed with pop, see below)
 - time
 - random
-- pygame
 
-Missing modules can usually be installed using the python package manger, pip. For example:
+Non default modules can usually be installed using the python package manger, pip. For example:
 ```
-pip install pygame
+pip install pigpio pygame
 ```
+When installed on a Raspberry Pi running OS Lite it may also be necessary to install the libsdl2-mixer-2.0-0 library in order for the pygame module to work successfully. This can be installed with:
+```
+sudo apt-get install libsdl2-mixer-2.0-0
+``` 
 ## Sounds
 The project includes a number of sound files in mp3 format. These were mixed using audacity, primarily to set the stereo balance and make use of the placement of the two speakers on the layout.
