@@ -45,5 +45,17 @@ When installed on a Raspberry Pi running OS Lite it may also be necessary to ins
 ```
 sudo apt-get install libsdl2-mixer-2.0-0
 ``` 
+## Autostart
+The python program can be made to run a boot time by editing the /etc/rc.local file on the host pi and adding the following:
+```
+sudo runuser -l [user] -c 'python /home/[user]/mod-rail-enviro/python/mod-rail-enviro.py > /dev/null' &
+```
+Replace [user] with the username of the system user that owns the python program.
+
+The os.chdir directive also needs to be updated in the python program to reflect the working folder that contains the audio files. For example:
+```
+os.chdir("/home/[user]/mod-rail-enviro/python")
+```
+Again, replace [user] with the username of the system user that owns the python program.
 ## Sounds
 The project includes a number of sound files in mp3 format. These were mixed using audacity, primarily to set the stereo balance and make use of the placement of the two speakers on the layout.
