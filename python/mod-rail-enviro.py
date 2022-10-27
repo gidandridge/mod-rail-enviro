@@ -1,6 +1,8 @@
 import os
 
 os.system("clear")
+os.chdir("/home/gavin/mod-rail-enviro/sounds")
+
 print ("Starting weather system, please wait ...")
 
 import RPi.GPIO as GPIO
@@ -8,7 +10,6 @@ import pigpio
 import time
 import random
 import pygame
-import os
 
 red = 2
 green = 3
@@ -127,7 +128,6 @@ def fireworks():
   print(" done")
 
 # Start dynamic weather and lighting effects
-os.chdir("/home/gavin/mod-rail-enviro/python")
 print("Starting dynamic weather and sound")
 pygame.mixer.init(buffer=2048)
 GPIO.setwarnings(False)
